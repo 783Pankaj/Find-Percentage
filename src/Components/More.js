@@ -37,6 +37,12 @@ const More = () => {
         navigate('/');
     }
 
+    const clearVal=()=>{
+        setFirst('');
+        setSecond('');
+        setStore('');
+    }
+
     return (
         <>
         <div className="full">
@@ -52,22 +58,25 @@ const More = () => {
                 <input type="number"
                     placeholder="Enter your first Value"
                     className="first-input"
+                    value={firstVal}
                     onChange={(e) => { setFirst(e.target.value) }} /><br /><br />
 
                 <input type="number"
                     placeholder="Enter your Second Value"
                     className="first-input"
+                    value={second}
                     onChange={(e) => { setSecond(e.target.value) }} /><br /><br />
 
                 <button type="submit" onClick={addVal} className="allBtn">ADD</button>
                 <button type="submit" onClick={subVal} className="allBtn">Sub</button>
                 <button type="submit" onClick={multiVal} className="allBtn">Multi</button>
-                <button type="submit" onClick={divideVal} className="allBtn">divide</button><br /><br/>
+                <button type="submit" onClick={divideVal} className="allBtn">divide</button>
+                <button type="submit" onClick={clearVal} className="allBtn">Clear</button><br /><br/>
                 <div>
                     <label className="ans">Ans:</label>
                     <input type="text"  className="first-input" value={store} />
                 </div>
-                <button onClick={back}>Back</button>
+                <button onClick={back} className="backBtn">Back</button>
             </div><br />
             </div>
         </>
