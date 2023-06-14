@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import ShowResult from './ShowResult';
+import { useNavigate } from 'react-router-dom';
 
 const Input = () => {
+    const navigate = useNavigate();
     const [val, setVal] = useState();
     let [store, setStore] = useState();
     const[per, setPer] = useState();
@@ -30,6 +32,11 @@ const Input = () => {
         setRemS(rems);
 
     }
+
+    const MoreCal=()=>{
+        navigate('/more')
+    }
+
     const clearVal=()=>{
         
         setStore('');
@@ -76,7 +83,8 @@ const Input = () => {
 
                     <br />
                     <button type='submit' onClick={submitVal}>submit</button>
-                    <button type='submit' onClick={clearVal} className='clear'>Clear</button><br />
+                    <button type='submit' onClick={clearVal} className='clear'>Clear</button><br /> <br/>
+                    <button type='submit' onClick={MoreCal} className='clear'>More calculator</button><br />
                     <br />
                 </div>
             </div>
@@ -133,6 +141,7 @@ const Input = () => {
 
                     <input type='text' value={rems} />
                 </div>
+
             </div>
         </>
     );
